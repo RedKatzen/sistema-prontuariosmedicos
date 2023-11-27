@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="br.com.ienh.trabalhofinalprontuarios.TelaPacientesController"
-      alignment="CENTER"
-      spacing="7"
-      prefHeight="500.0" prefWidth="600.0">
+<VBox alignment="CENTER_LEFT" prefHeight="1000.0" prefWidth="500.0" spacing="7" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ienh.trabalhofinalprontuarios.PacientesController">
 
-    <MenuBar />
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
 
+    <HBox>
+        <Button fx:id="btnMostrarPacientes" onMouseClicked="#onPesquisarPorTodosBtnClick" text="Mostrar todos"/>
+    </HBox>
+
+    <TableView fx:id="tabelaPacientes">
+        <columns>
+            <TableColumn fx:id="colunaId"  text="id" prefWidth="53.0"/>
+            <TableColumn fx:id="colunaNome" text="nome" prefWidth="184.0" />
+            <TableColumn fx:id="colunaDataNascimento" text="nascido" prefWidth="89.0" />
+            <TableColumn fx:id="colunaSexo" text="sexo" prefWidth="68.0" />
+            <TableColumn fx:id="colunaCpf" text="CPF" prefWidth="215.0" />
+        </columns>
+    </TableView>
 </VBox>

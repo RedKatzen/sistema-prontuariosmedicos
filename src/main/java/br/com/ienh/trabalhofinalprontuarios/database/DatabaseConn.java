@@ -8,9 +8,9 @@ public class DatabaseConn {
     private static DatabaseConn db;
 
     private DatabaseConn() throws Exception {
-        String url = "jdbc:mysql://localhost:3306/sisienh23?serverTimezone=UTC";
+        String url = "jdbc:mysql://localhost:3306/sisienh?serverTimezone=UTC";
         String usuario = "root";
-        String senha = "ienh";
+        String senha = "root";
         Class.forName("com.mysql.cj.jdbc.Driver");
         conn = DriverManager.getConnection(url, usuario, senha);
     }
