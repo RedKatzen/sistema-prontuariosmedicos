@@ -95,13 +95,23 @@ public class PacientesController {
         colunaSexo.setCellValueFactory(new PropertyValueFactory<>("sexo"));
         colunaCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 
-        lblNome.setPadding(new Insets(20, 0, 10, 0));
-        lblDataNascimento.setPadding(new Insets(10, 0, 10, 0));
-        lblSexo.setPadding(new Insets(10, 0, 10, 0));
-        lblCpf.setPadding(new Insets(10, 0, 20, 0));
-
         setModoInsercao();
         visualizarPacientes();
+    }
+
+    @FXML
+    protected void onJanelaPacientesBtnClick() {
+        Application.changeScreen(1);
+    }
+
+    @FXML
+    protected void onJanelaMedicosBtnClick() {
+        Application.changeScreen(2);
+    }
+
+    @FXML
+    protected void onJanelaProntuariosBtnClick() {
+        Application.changeScreen(3);
     }
 
     @FXML
