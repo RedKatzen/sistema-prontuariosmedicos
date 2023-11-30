@@ -4,23 +4,74 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER_LEFT" prefHeight="1000.0" prefWidth="500.0" spacing="7" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ienh.trabalhofinalprontuarios.PacientesController">
+<HBox alignment="CENTER_LEFT" maxHeight="680" maxWidth="1016.0" minHeight="500" minWidth="800" prefHeight="510.0" prefWidth="1016.0" spacing="7" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ienh.trabalhofinalprontuarios.PacientesController">
 
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <HBox>
-        <Button fx:id="btnMostrarPacientes" onMouseClicked="#onPesquisarPorTodosBtnClick" text="Mostrar todos"/>
-    </HBox>
+    <VBox>
+        <GridPane alignment="BOTTOM_LEFT" hgap="5" vgap="10">
 
-    <TableView fx:id="tabelaPacientes">
-        <columns>
-            <TableColumn fx:id="colunaId"  text="id" prefWidth="53.0"/>
-            <TableColumn fx:id="colunaNome" text="nome" prefWidth="184.0" />
-            <TableColumn fx:id="colunaDataNascimento" text="nascido" prefWidth="89.0" />
-            <TableColumn fx:id="colunaSexo" text="sexo" prefWidth="68.0" />
-            <TableColumn fx:id="colunaCpf" text="CPF" prefWidth="215.0" />
-        </columns>
-    </TableView>
-</VBox>
+            <Label fx:id="lblPesquisaId" text="Pesquisar por ID: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtPesquisaId" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Button fx:id="btnPesquisaId" onMouseClicked="#onPesquisarPorIdBtnClick" text="Pesquisar" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Label fx:id="lblErro" text="" />
+
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+
+        </GridPane>
+
+        <TableView fx:id="tabelaPacientes" pickOnBounds="false" prefHeight="425.0" prefWidth="700.0">
+            <columns>
+                <TableColumn fx:id="colunaId" prefWidth="53.0" text="ID" />
+                <TableColumn fx:id="colunaNome" prefWidth="229.0" text="Nome" />
+                <TableColumn fx:id="colunaDataNascimento" prefWidth="165.0" text="Data de nascimento" />
+                <TableColumn fx:id="colunaSexo" minWidth="0.0" prefWidth="49.0" text="Sexo" />
+                <TableColumn fx:id="colunaCpf" prefWidth="203.0" text="CPF" />
+            </columns>
+        </TableView>
+
+    </VBox>
+
+    <VBox alignment="TOP_LEFT" prefHeight="177.0" prefWidth="267.0">
+        <Button fx:id="btnMostrarPacientes" onMouseClicked="#onPesquisarPorTodosBtnClick" prefHeight="23.0" prefWidth="150.0" text="Mostrar todos" />
+        <Label fx:id="lblModo" />
+
+        <Label fx:id="lblNome" text="Nome" />
+        <TextField fx:id="txtNome" />
+
+        <Label fx:id="lblDataNascimento" text="Data de nascimento" />
+        <TextField fx:id="txtDataNascimento" />
+
+        <Label fx:id="lblSexo" text="Sexo" />
+        <TextField fx:id="txtSexo" />
+
+        <Label fx:id="lblCpf" text="CPF" />
+        <TextField fx:id="txtCpf" />
+        <VBox alignment="CENTER" prefHeight="177.0" prefWidth="267.0" spacing="15" >
+            <Button fx:id="btnSalvar" onMouseClicked="#onSalvarBtnClick" text="Salvar" prefWidth="90.0" />
+            <Button fx:id="btnEditar" onMouseClicked="#onEditarBtnClick" text="Editar selecionado" prefWidth="150.0" />
+            <Button fx:id="btnSairModoEdicao" onMouseClicked="#onSairEdicaoBtnClick" prefWidth="150.0" text="Sair da Edição" />
+            <Button fx:id="btnExcluir" onMouseClicked="#onExcluirBtnClick" text="Excluir" prefWidth="90.0" />
+
+            <padding>
+                <Insets bottom="0" left="0" right="0" top="10.0" />
+            </padding>
+        </VBox>
+        <padding>
+            <Insets bottom="10.0" left="18.0" right="50.0" top="10.0" />
+        </padding>
+    </VBox>
+
+</HBox>

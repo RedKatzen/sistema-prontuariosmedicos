@@ -7,20 +7,19 @@ public class Paciente {
     private String sexo;
     private String cpf;
 
-    public Paciente(int id, String nome, String data_nascimento, String sexo, String cpf) {
+    public Paciente(int id, String nome, String dataNascimento, String sexo, String cpf) {
         this.id = id;
         this.nome = nome;
-        this.data_nascimento = data_nascimento;
+        this.data_nascimento = dataNascimento;
         this.sexo = sexo;
         this.cpf = cpf;
     }
-    public Paciente(String nome, String data_nascimento, String sexo, String cpf) {
+    public Paciente(String nome, String dataNascimento, String sexo, String cpf) {
         this.nome = nome;
-        this.data_nascimento = data_nascimento;
+        this.data_nascimento = dataNascimento;
         this.sexo = sexo;
         this.cpf = cpf;
     }
-    public Paciente() {}
 
     public int getId() {
         return id;
@@ -34,12 +33,12 @@ public class Paciente {
         this.nome = nome;
     }
 
-    public String getData_nascimento() {
-        return data_nascimento;
+    public String getData_nascimento()  {
+        return this.data_nascimento;
     }
 
-    public void setData_nascimento(String data_nascimento) {
-        this.data_nascimento = data_nascimento;
+    public void setData_nascimento(String dataNascimento) {
+        this.data_nascimento = dataNascimento;
     }
 
     public String getSexo() {

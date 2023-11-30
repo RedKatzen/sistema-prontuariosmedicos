@@ -9,9 +9,9 @@ import java.io.IOException;
 
 public class Application extends javafx.application.Application {
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("tela-inicial-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 400);
+    public void start(Stage stage) throws IOException {                             // a mudar tela
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("tabela-pacientes-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1100, 500);
         stage.setTitle("Sistema de Prontuários");
         stage.setScene(scene);
         stage.show();
