@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="720" maxWidth="1150.0" minHeight="500" minWidth="800" prefHeight="590.0" prefWidth="1118.0" spacing="7" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ienh.trabalhofinalprontuarios.MedicosController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <VBox>
+        <HBox>
+            <MenuBar style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+                <menus>
+                    <Menu mnemonicParsing="false" text="Ficheiro">
+                        <items>
+                            <MenuItem fx:id="btnJanelaPacientes" mnemonicParsing="false" onAction="#onJanelaPacientesBtnClick" text="Info. Pacientes" />
+                            <MenuItem fx:id="btnJanelaProntuarios" mnemonicParsing="false" onAction="#onJanelaProntuariosBtnClick" text="Prontuários" />
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+        </HBox>
+        <GridPane alignment="CENTER_RIGHT" hgap="10" prefHeight="35.0" prefWidth="200.0" vgap="10">
+
+            <Label fx:id="lblPesquisaId" text="Pesquisar por ID: " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="txtPesquisaId" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="btnPesquisaId" onMouseClicked="#onPesquisarPorIdBtnClick" text="Pesquisar" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label fx:id="lblErro" text="" GridPane.rowIndex="1" />
+
+        </GridPane>
+        <TableView fx:id="tabelaMedicos" pickOnBounds="false" prefHeight="458.0" prefWidth="860.0">
+            <columns>
+                <TableColumn fx:id="colunaId" prefWidth="37.0" text="ID" />
+                <TableColumn fx:id="colunaNome" prefWidth="164.0" text="Nome" />
+                <TableColumn fx:id="colunaEspecialidade" prefWidth="120.0" text="Especialidade" />
+                <TableColumn fx:id="colunaDataAdmissao" minWidth="0.0" prefWidth="120.0" text="Data de Admissao" />
+                <TableColumn fx:id="colunaCpf" maxWidth="200.0" prefWidth="120.0" text="CPF" />
+                <TableColumn fx:id="colunaEmail" prefWidth="220.0" text="Email" />
+            </columns>
+            <VBox.margin>
+                <Insets top="25.0" />
+            </VBox.margin>
+        </TableView>
+    </VBox>
+    <VBox>
+        <Button fx:id="btnMostrarPacientes" alignment="CENTER" onMouseClicked="#onPesquisarPorTodosBtnClick" prefHeight="23.0" prefWidth="150.0" text="Mostrar todos" textAlignment="CENTER">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <font>
+                <Font name="Calibri" size="14.0" />
+            </font>
+        </Button>
+
+        <Label fx:id="lblModo">
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+        </Label>
+
+        <Label fx:id="lblNome" text="Nome">
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="txtNome">
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="20.0" />
+            </VBox.margin>
+        </TextField>
+
+        <Label fx:id="lblDataAdmissao" text="Data de admissao">
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="txtDataAdmissao">
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="20.0" />
+            </VBox.margin>
+        </TextField>
+
+        <Label fx:id="lblEspecialidade" text="Especialidade">
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="txtEspecialidade">
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="20.0" />
+            </VBox.margin>
+        </TextField>
+
+        <Label fx:id="lblCpf" text="CPF">
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="txtCpf">
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </TextField>
+
+        <Label fx:id="lblEmail" text="Email">
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="txtEmail">
+            <font>
+                <Font name="Calibri" size="13.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </TextField>
+
+        <VBox alignment="CENTER" prefHeight="177.0" prefWidth="267.0" spacing="15">
+            <Button fx:id="btnSalvar" onMouseClicked="#onSalvarBtnClick" prefWidth="90.0" text="Salvar">
+                <font>
+                    <Font name="Candara" size="14.0" />
+                </font></Button>
+            <Button fx:id="btnEditar" onMouseClicked="#onEditarBtnClick" prefWidth="150.0" text="Editar selecionado">
+                <font>
+                    <Font name="Candara" size="14.0" />
+                </font></Button>
+            <Button fx:id="btnSairModoEdicao" onMouseClicked="#onSairEdicaoBtnClick" prefWidth="150.0" text="Sair da Edição">
+                <font>
+                    <Font name="Candara" size="14.0" />
+                </font></Button>
+            <Button fx:id="btnExcluir" onMouseClicked="#onExcluirBtnClick" prefWidth="90.0" text="Excluir">
+                <font>
+                    <Font name="Candara" size="14.0" />
+                </font></Button>
+
+            <padding>
+                <Insets bottom="0" left="0" right="0" top="10.0" />
+            </padding>
+        </VBox>
+
+        <padding>
+            <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+        </padding>
+
+        <HBox.margin>
+            <Insets top="40.0" />
+        </HBox.margin>
+    </VBox>
+</HBox>

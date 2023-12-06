@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ienh.trabalhofinalprontuarios.InicialController">
+
+    <VBox alignment="CENTER" maxHeight="400.0" minHeight="0.0" prefHeight="400.0" prefWidth="400.0">
+      <ImageView fx:id="imageViewLogo" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets bottom="45.0" />
+         </VBox.margin>
+      </ImageView>
+        <Label text="Health Care - Sistema de Prontuários" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="25.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Candara Bold" size="22.0" />
+         </font>
+        </Label>
+        <Label text="Conato: gabrielfrohlich@ienh.com.br" textAlignment="CENTER">
+            <VBox.margin>
+                <Insets bottom="25.0" />
+            </VBox.margin>
+            <font>
+                <Font name="Calibri" size="18.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" prefHeight="18.0" prefWidth="76.0" text="Versão: 0.5" textAlignment="CENTER">
+            <VBox.margin>
+                <Insets bottom="25.0" />
+            </VBox.margin>
+            <font>
+                <Font name="Calibri" size="15.0" />
+            </font>
+        </Label>
+   </VBox>
+
+</HBox>
